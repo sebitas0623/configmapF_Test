@@ -894,7 +894,7 @@ data:
     \" and\n    proc.args contains \"/usr/bin/mandb\")\n\n# Baseline rules\n# Tuning:
     whitelist cmdline using whitelisted_match_meli_commands\n# Tuning: whitelist MELI
     images using allowed_meli_images list\n- rule: Read sensitive file untrusted\n  enabled:
-    true\n  desc: >\n    an attempt to read any sensitive file (e.g. files containing
+    false\n  desc: >\n    an attempt to read any sensitive file (e.g. files containing
     user/password/authentication\n    information). Exceptions are made for known trusted
     programs.\n  condition: >\n    sensitive_files and open_read\n    and proc_name_exists\n
     \   and not proc.name in (user_mgmt_binaries, userexec_binaries, package_mgmt_binaries,\n
